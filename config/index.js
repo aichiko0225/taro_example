@@ -1,3 +1,6 @@
+// eslint-disable-next-line import/no-commonjs
+const path = require('path')
+
 const config = {
   projectName: 'taro_example',
   date: '2022-12-30',
@@ -12,8 +15,23 @@ const config = {
   plugins: [],
   defineConstants: {
   },
+  alias: {
+    '@/vant': path.resolve(__dirname, '../src/components/vant-weapp/dist')
+  },
   copy: {
     patterns: [
+      { from: 'src/components/vant-weapp/dist/wxs', to: 'dist/components/vant-weapp/dist/wxs' },
+      { from: 'src/components/vant-weapp/dist/common/style', to: 'dist/components/vant-weapp/dist/common/style' },
+      { from: 'src/components/vant-weapp/dist/common/index.wxss', to: 'dist/components/vant-weapp/dist/common/index.wxss' },
+      { from: 'src/components/vant-weapp/dist/button/index.wxs', to: 'dist/components/vant-weapp/dist/button/index.wxs' },
+      { from: 'src/components/vant-weapp/dist/icon/index.wxs', to: 'dist/components/vant-weapp/dist/icon/index.wxs' },
+      { from: 'src/components/vant-weapp/dist/popup/index.wxs', to: 'dist/components/vant-weapp/dist/popup/index.wxs' },
+      { from: 'src/components/vant-weapp/dist/transition/index.wxs', to: 'dist/components/vant-weapp/dist/transition/index.wxs' },
+      { from: 'src/components/vant-weapp/dist/loading/index.wxs', to: 'dist/components/vant-weapp/dist/loading/index.wxs' },
+      { from: 'src/components/vant-weapp/dist/calendar/index.wxs', to: 'dist/components/vant-weapp/dist/calendar/index.wxs' },
+      { from: 'src/components/vant-weapp/dist/calendar/utils.wxs', to: 'dist/components/vant-weapp/dist/calendar/utils.wxs' },
+      { from: 'src/components/vant-weapp/dist/calendar/calendar.wxml', to: 'dist/components/vant-weapp/dist/calendar/calendar.wxml' },
+      { from: 'src/components/vant-weapp/dist/calendar/components/month/index.wxs', to: 'dist/components/vant-weapp/dist/calendar/components/month/index.wxs' },
     ],
     options: {
     }
@@ -25,7 +43,7 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-
+          selectorBlackList: [/van-/],
         }
       },
       url: {
