@@ -2,6 +2,10 @@ import { Component, PropsWithChildren } from 'react'
 import { View, Text, Slot } from '@tarojs/components'
 import './index.scss'
 import Taro from '@tarojs/taro'
+import {
+  Button,
+  MiniLoginButton
+} from '@antmjs/vantui'
 
 interface IndexState {
   show: boolean
@@ -39,14 +43,29 @@ export default class Index extends Component<PropsWithChildren, IndexState> {
           onConfirm={this.onConfirm}
         >
           <Slot name='title'>
-            <View>Hello world</View>
+            <View>日期选择---自定义Slot</View>
           </Slot>
         </van-calendar>
         <View>
           {this.state.date}
         </View>
         <View>
-          <Text onClick={() => { Taro.navigateTo({ url: '/pages/about/index' }) }}>Hello world!</Text>
+          <Text onClick={() => { Taro.navigateTo({ url: '/pages/about/index' }) }}>goto about</Text>
+        </View>
+
+        <View>
+          <Button type="default">默认按钮</Button>
+          <Button type="primary">主要按钮</Button>
+          <Button type="info">信息按钮</Button>
+          <Button type="warning">警告按钮</Button>
+          <Button type="danger">危险按钮</Button>
+        </View>
+        <View>
+          <MiniLoginButton onFail={function (error: TaroGeneral.CallbackResult): void {
+            // throw new Error('Function not implemented.')
+          } } onGetLoginCode={function (loginInfo: Taro.login.SuccessCallbackResult): void {
+            // throw new Error('Function not implemented.')
+          } } >登录按钮</MiniLoginButton>
         </View>
       </View>
     )

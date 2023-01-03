@@ -43,7 +43,8 @@ const config = {
       pxtransform: {
         enable: true,
         config: {
-          selectorBlackList: [/van-/],
+          // 使用原生的 vant则需要关闭px转rpx
+          // selectorBlackList: [/van-/],
         }
       },
       url: {
@@ -62,6 +63,7 @@ const config = {
     }
   },
   h5: {
+    esnextModules: [/@antmjs[\\/]vantui/],
     publicPath: '/',
     staticDirectory: 'static',
     postcss: {

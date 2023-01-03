@@ -22,7 +22,7 @@ export default class About extends Component {
   render () {
     return (
       <View className='about'>
-        <Text onClick={() => { Taro.navigateTo({ url: '/pages/index/index' }) }}>About</Text>
+        <Text onClick={() => { Taro.reLaunch({ url: '/pages/index/index' }) }}>About</Text>
       </View>
     )
   }

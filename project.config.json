@@ -9,7 +9,10 @@
     "enhance": false,
     "compileHotReLoad": false,
     "postcss": false,
-    "minified": false
+    "minified": false,
+    "miniCssExtractPluginOption": {
+      "ignoreOrder": true
+    }
   },
   "compileType": "miniprogram"
 }
